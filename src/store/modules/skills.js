@@ -1,0 +1,32 @@
+const skills = {
+    state: {
+        data: []
+    },
+    getters: {
+        skills(state) {
+            return state.data
+        }
+    },
+    mutations: {
+        addnewSkill(state, skill) {
+            state.data.push(skill);
+        },
+        remouveExistedSkill(state,skillID) {
+            state.data = state.data.filter(item => item.id !=   skillID)
+        }
+    },
+    actions: {
+        fetchSkills({ state }) {
+            return fetch("/src/data.json")
+                .then(response => {
+                    return response.json()
+                }).then(data => {
+                    state.data = data
+                })
+        }
+ 
+        }
+        
+}
+
+export default skills

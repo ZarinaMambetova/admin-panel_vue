@@ -1,0 +1,22 @@
+.tabs {
+    background: $beige;
+
+}
+
+.item {
+    display: inline-flex;
+
+}
+
+.link {
+    padding: 20px 70px;
+    text-transform: uppercase;
+    border-right: 2px solid #fff;
+    text-decoration: none;
+    color: $green;
+}
+
+.active-tab {
+    background: #fff;
+    color: $green;
+}

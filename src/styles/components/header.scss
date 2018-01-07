@@ -1,0 +1,20 @@
+header {
+    background: $green;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    color: #fff;
+    font-size: 28px;
+}
+
+.logout {
+    margin-left: auto;
+    font-size: 16px;
+    color: #fff;
+    &:hover {
+        text-decoration: none;
+    }
+}
