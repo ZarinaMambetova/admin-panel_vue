@@ -1,4 +1,28 @@
-.error {
-    border: 1px solid  firebrick;
+.table {
+    font-family: 'robotoregular';
+}
+
+.title {
+    margin: 30px 0 30px 0;
+}
+
+input {
+    text-align: initial;
+    border-radius: 5px;
     outline: none;
+    border: 1px solid transparent;
+}
+
+.error {
+    border: 1px solid firebrick;
+    outline: none;
+}
+
+.add-button button {
+    margin: 0 10px 0 0;
+    padding: rem(10) rem(10);
+}
+
+div {
+    width: 420px;
 }
