@@ -10,7 +10,7 @@
           v-model="fields.title"
         )
       .row
-        input(
+        input.tech(
           placeholder="Технологии"
           type="text"
           v-model="fields.tech"

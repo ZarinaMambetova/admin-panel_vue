@@ -11,6 +11,12 @@ input {
     border-radius: 5px;
     outline: none;
     border: 1px solid transparent;
+    @include tablet {
+        width: 200px;
+    }
+    @include phone {
+        width: 200px;
+    }
 }
 
 .error {
@@ -18,11 +24,20 @@ input {
     outline: none;
 }
 
+
+
 .add-button button {
     margin: 0 10px 0 0;
     padding: rem(10) rem(10);
+
 }
 
 div {
     width: 420px;
+    @include tablet {
+        width: 100%;
+    }
+    @include phone {
+        width: 100%;
+   }
 }

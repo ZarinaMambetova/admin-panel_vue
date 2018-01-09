@@ -1,20 +1,32 @@
-.tabs {
-    background: $beige;
-}
+        .tabs {
+        background: $beige;
+    }
 
-.item {
-    display: inline-flex;
-}
-
-.link {
-    padding: 20px 70px;
-    text-transform: uppercase;
-    border-right: 2px solid #fff;
-    text-decoration: none;
-    color: $green;
-}
-
-.active-tab {
-    background: #fff;
-    color: $green;
-}
+    .item {
+        display: inline-flex;
+        @include phone {
+            width: 100%;
+        }
+        }
+        .link {
+            padding: 20px 70px;
+            text-transform: uppercase;
+            border-right: 2px solid #fff;
+            text-decoration: none;
+            color: $green;
+            @include phone {
+                text-align: center;
+                width: 100%;
+            }
+        }
+        .active-tab {
+            background: #fff;
+            color: $green;
+        }
+        .list {
+            @include phone {
+                display: flex;
+                FLEX-DIRECTION: column;
+                align-items: center;
+            }
+        }
