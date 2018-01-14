@@ -29,5 +29,5 @@ export default {
 }
 </script>
 
-<style  lang="scss" scoped>
+<style src="../styles/components/skillItem.scss" lang="scss" scoped>
 </style>

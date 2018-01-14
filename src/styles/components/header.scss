@@ -1,20 +1,35 @@
-header {
-    background: $green;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-}
+                header {
+                    background: $green;
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+                    @include phone {
+                        flex-direction: column-reverse;
+                        text-align: center;
+                    }
+                }
 
-.title {
-    color: #fff;
-    font-size: 28px;
-}
+                .title {
+                    color: #fff;
+                    font-size: 28px;
+                    @include tablet {
+                        font-size: 21px;
+                        padding-top: 10px;
+                    }
+                    @include phone {
+                        font-size: 18px;
+                        padding-top: 10px;
+                    }
+                }
 
-.logout {
-    margin-left: auto;
-    font-size: 16px;
-    color: #fff;
-    &:hover {
-        text-decoration: none;
-    }
-}
+                .logout {
+                    margin-left: auto;
+                    font-size: 16px;
+                    color: #fff;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    @include phone {
+                        margin-left: initial;
+                    }
+                }

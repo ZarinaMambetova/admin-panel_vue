@@ -1,3 +1,17 @@
+$tablet-width: 768px;
+$phone-width: 320px;
+@mixin tablet {
+    @media (min-width: #{480px}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (min-width: #{$phone-width}) and (max-width: #{480px - 1px}) {
+        @content;
+    }
+}
+
 @mixin roboto($style: regular) {
     @if $style==medium {
         font-weight: 500;
@@ -7,4 +21,15 @@
 @function svg($url, $color) {
     $base-color: str-slice(inspect($color), 2);
     @return unquote('url("' + $url + "?fill=%23" + $base-color +'")');
+}
+
+$baseFontSize: 16;
+@function rem($pixels, $context: $baseFontSize) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+    @return $pixels / $context * 1rem;
 }

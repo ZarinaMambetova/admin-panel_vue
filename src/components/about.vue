@@ -1,12 +1,16 @@
 <template lang="pug">
   .about
-    h1 Страница "Обо мне"
-    skillsList(
-        v-for="(skillType, index) in skillsTypes"
-        :key="index"
-        :skillType="skillType"
-        :skills="skills"
-    )
+    h2 Страница "Обо мне"
+    div.list
+        skillsList(
+            v-for="(skillType, index) in skillsTypes"
+            :key="index"
+            :skillType="skillType"
+            :skills="skills"
+        )
+    button(
+                type="button"
+                     ) Сохранить
 
 </template>
 

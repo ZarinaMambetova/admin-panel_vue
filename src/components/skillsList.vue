@@ -1,14 +1,14 @@
 <template lang="pug">
-    div
-        .title {{ skillType }}
-        table.table
-            skillitem(
-                v-for="skill in skills"
-                :key="skill.id"
-                :skill="skill"
-                v-if="checkskillType(skillType) == skill.type"
-                @remouveSkill="remouveSkill"
-            )
+        div
+            .title {{ skillType }}
+            table.table
+                skillitem(
+                    v-for="skill in skills"
+                    :key="skill.id"
+                    :skill="skill"
+                    v-if="checkskillType(skillType) == skill.type"
+                    @remouveSkill="remouveSkill"
+                )
             .add-button
                 button(
                     type="button"

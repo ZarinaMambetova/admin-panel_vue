@@ -1,0 +1,48 @@
+        .title {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            display: flex;
+            @include phone {
+                display: block;
+            }
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .table {
+            max-height: 400px;
+            overflow: auto;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        .posts {
+            width: 100%;
+        }
+
+        .blog-textarea {
+            width: 80%;
+            height: 165px;
+            text-align: initial;
+            padding: 12px;
+            @include phone {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        input {
+            text-align: initial;
+            padding: 12px;
+        }
+
+        .error {
+            border: 1px solid firebrick;
+            outline: none;
+        }
