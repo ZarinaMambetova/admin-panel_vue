@@ -17,11 +17,12 @@ const skills = {
     },
     actions: {
         fetchSkills({ state }) {
-            return fetch("/src/data.json")
+            return fetch("/getSkills")
                 .then(response => {
                     return response.json()
                 }).then(data => {
-                    state.data = data
+                    console.log(data)
+                    state.data = data.getSkills
                 })
         }
  

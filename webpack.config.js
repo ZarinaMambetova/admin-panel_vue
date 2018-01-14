@@ -7,8 +7,8 @@ module.exports = {
     styles: './src/styles/index.js'
 },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, '../backend_of_portfolio/public/dist/'),
+    publicPath: '../backend_of_portfolio/public/dist/',
     filename: '[name].bundle.js'
   },
   module: {
