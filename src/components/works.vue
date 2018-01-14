@@ -8,13 +8,17 @@
           placeholder="Название проекта"
           type="text"
           v-model="fields.title"
+          :class="{error: validation.hasError('fields.title')}"
         )
+        div {{validation.firstError('fields.title')}}
       .row
         input.tech(
           placeholder="Технологии"
           type="text"
           v-model="fields.tech"
+          :class="{error: validation.hasError('fields.tech')}"
         )
+        div {{validation.firstError('fields.tech')}}
       .row
         label.upload
           input.type-file(
@@ -30,6 +34,8 @@
                 :disabled="!fields.file || validation.hasError('fields.file')"
                 @click="sendData"
                      ) Добавить
+
+          
 </template>
 
 <script>
@@ -38,8 +44,14 @@ import { Validator } from 'simple-vue-validator';
 
 export default {
     mixins: [require('simple-vue-validator').mixin],
-    validators: {
-    'fields.file': (value) => {
+  validators: {
+      'fields.title'(value) {
+ return Validator.value(value).required('Поле не может быть пустым')
+  },
+        'fields.tech'(value) {
+ return Validator.value(value).required('Поле не может быть пустым')
+      },
+     'fields.file': (value) => {
       return Validator.custom(() => {
         if (Validator.isEmpty(value)) return
         const allowedTypes = ['application/pdf', 'application/zip']

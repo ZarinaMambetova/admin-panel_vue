@@ -9,18 +9,24 @@
             type="text",
             placeholder="Название"
             v-model="fields.title"
+            :class="{error: validation.hasError('fields.title')}"
+
           )
+          div {{validation.firstError('fields.title')}}
         .row
           input(
             type="date",
             v-model="fields.date"
           )
+
         .row
           textarea.input.blog-textarea(
             type="text" 
             placeholder="Содержание"
             v-model="fields.text"
+            :class="{error: validation.hasError('fields.text')}"
           )
+          div {{validation.firstError('fields.text')}}
         .row
           button(
             type="button"
@@ -42,7 +48,14 @@ import { Validator } from 'simple-vue-validator';
 
 export default {
       mixins: [require('simple-vue-validator').mixin],
-
+ validators: {
+      'fields.title'(value) {
+ return Validator.value(value).required('Поле не может быть пустым')
+      },
+     'fields.text'(value) {
+ return Validator.value(value).required('Поле не может быть пустым')
+      }
+  },
       
   data: () => ({
     fields: {
