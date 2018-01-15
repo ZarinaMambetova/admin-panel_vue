@@ -10,6 +10,7 @@
         )
     button(
                 type="button"
+                @click="saveSkill"
                      ) Сохранить
 
 </template>
@@ -25,9 +26,9 @@ export default {
      computed: {
     ...mapGetters(['skills'])
   },
-     methods: {
-    ...mapActions(['fetchSkills']),
-              },
+    methods: {
+        ...mapActions(['fetchSkills', 'saveSkill']),
+    },
     created() {
         this.fetchSkills();
         
