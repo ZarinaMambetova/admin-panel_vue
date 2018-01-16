@@ -31,7 +31,6 @@
       .row
           button(
                 type="button"
-                :disabled="!fields.file || validation.hasError('fields.file')"
                 @click="sendData"
                      ) Добавить
 
@@ -39,7 +38,7 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex';
+import {mapMutations, mapActions} from 'vuex';
 import { Validator } from 'simple-vue-validator';
 
 export default {
@@ -51,15 +50,15 @@ export default {
         'fields.tech'(value) {
  return Validator.value(value).required('Поле не может быть пустым')
       },
-     'fields.file': (value) => {
-      return Validator.custom(() => {
-        if (Validator.isEmpty(value)) return
-        const allowedTypes = ['application/pdf', 'application/zip']
-        if (!_.includes(allowedTypes, value.type)) {
-          return 'Недопустимый формат файла, разрешены только .zip и .pdf'
-        }
-      })
-    }
+    //  'fields.file': (value) => {
+    //   return Validator.custom(() => {
+    //     if (Validator.isEmpty(value)) return
+    //     const allowedTypes = ['application/pdf', 'application/zip']
+    //     if (!_.includes(allowedTypes, value.type)) {
+    //       return 'Недопустимый формат файла, разрешены только .zip и .pdf'
+    //     }
+    //   })
+    // }
   },
   data: () => ({
     fields: {
@@ -69,20 +68,21 @@ export default {
     }
   }),
   methods: {
-    ...mapMutations('works', ['addNewWork']),
+    ...mapActions('works', ['addNewWork']),
     getFile(event) {
       const file = event.target.files[0]
       this.fields.file = file
     },
     sendData() {
-      this.$validate().then(success => {
-        if (!success) return
+      // this.$validate().then(success => {
+      //   if (!success) return
+      console.log(2)
         const formData = new FormData()
         formData.append('file', this.fields.file)
         formData.append('tech', this.fields.tech)
         formData.append('title', this.fields.title)
         this.addNewWork(formData)
-      })
+      // })
     }
   },
 }

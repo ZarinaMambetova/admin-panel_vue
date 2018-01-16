@@ -42,7 +42,6 @@
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-
 import { Validator } from 'simple-vue-validator';
 
 
@@ -63,19 +62,21 @@ export default {
       date: '',
       text: ''
     }
-  }),
-  methods: {
-    ...mapMutations('posts', ['addBlogPost']),
-    addPost() {
-      const fieldsData = _.clone(this.fields)
-      this.addBlogPost(fieldsData)
-    }
-  },
-  computed: {
-    ...mapGetters('posts', ['posts'])
-  },
-  mounted() {
-  }
+   })
+  //,
+  // methods: {
+  //   ...mapMutations('posts', ['addBlogPost']),
+  //   addPost() {
+  //     const fieldsData = _.clone(this.fields)
+  //     this.addBlogPost(fieldsData)
+  //   }
+  // },
+  // computed: {
+  //   ...mapGetters('posts', ['posts'])
+  // },
+  // mounted() {
+  // }
+ 
 }
 </script>
 <style src="../styles/components/blog.scss" lang="scss" scoped>

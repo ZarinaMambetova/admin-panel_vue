@@ -1,5 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
+const http = require('request');
+
+const apiOptions = {
+  server: "http://localhost:3000"
+}
 
 module.exports = {
   entry:  {
@@ -7,8 +12,8 @@ module.exports = {
     styles: './src/styles/index.js'
 },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, '../back-portfolio/public/dist/'),
+    publicPath: '../back-portfolio/public/dist/',
     filename: '[name].bundle.js'
   },
   module: {

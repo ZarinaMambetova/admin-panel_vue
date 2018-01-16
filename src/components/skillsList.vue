@@ -12,7 +12,7 @@
             .add-button
                 button(
                     type="button"
-                    @click="addnewSkill"
+                    @click="addSkill"
                 ) Добавить новый 
                 input(
                     type="text"
