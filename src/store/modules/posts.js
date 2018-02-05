@@ -22,8 +22,8 @@ const posts = {
                         state.data = data.getPosts
                     })
             },
-            savePosts({ state }) {
-                const data = JSON.stringify(state.data)
+            savePosts(article) {
+                const data = JSON.stringify(article)
                 // POST Запрос что бы отправить данные на сервер
                 fetch('/addPosts', {
                     method: 'post',
